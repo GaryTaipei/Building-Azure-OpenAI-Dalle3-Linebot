@@ -36,7 +36,7 @@ config.read("config.ini")
 
 # Azure Compuer Vision Settings
 vision_region = config["AzureComputerVision"]["REGION"]
-vision_key = config["AzureComputerVision"]["KEY"]
+vision_key = config["AzureComputerVision"]["COMPUTER_VISION_KEY"]
 
 vision_credentials = CognitiveServicesCredentials(vision_key)
 vision_client = ComputerVisionClient(
@@ -50,7 +50,7 @@ UPLOAD_FOLDER = "static"
 dalle_3_client = AzureOpenAI(
     api_version=config["AzureOpenAI"]["VERSION"],
     azure_endpoint=config["AzureOpenAI"]["ENDPOINT"],
-    api_key=config["AzureOpenAI"]["KEY"],
+    api_key=config["AzureOpenAI"]["OPENAI_KEY"],
 )
 
 gpt4v_client = AzureOpenAI(
